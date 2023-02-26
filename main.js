@@ -1,6 +1,6 @@
 // main.js
 
-const { app, BrowserWindow } = require('electron');
+const { app, shell, session, BrowserWindow } = require('electron');
 
 // Disable Hardware Acceleration
 // https://www.electronjs.org/docs/latest/tutorial/offscreen-rendering
@@ -22,10 +22,23 @@ createWindow = () => {
     });
 
     // Create a Cookie, so that Theater Mode is allways enabled.
-    let code = `
-    document.cookie = 'wide=1; expires='+new Date('3099').toUTCString()+'; path=/';
-    `;
-    win.webContents.executeJavaScript(code);
+    // https://www.electronjs.org/docs/latest/api/cookies
+    // http://blog.ercanopak.com/how-to-make-theater-mode-the-default-for-youtube/
+    // https://medium.com/swlh/building-an-application-with-electron-js-part-2-e62c23e4eb69
+    const cookie = { url: 'https://www.youtube.com', name: 'wide', value: '1' }
+    session.defaultSession.cookies.set(cookie)
+        .then(() => {
+            // success
+        }, (error) => {
+            console.error(error)
+        })
+
+    // Open links with External Browser
+    // https://stackoverflow.com/a/67409223
+    win.webContents.setWindowOpenHandler(({ url }) => {
+        shell.openExternal(url);
+        return { action: 'deny' };
+    });
 
     win.loadURL(`https://www.youtube.com/feed/subscriptions`);
 };
