@@ -4,12 +4,13 @@
   "description": "Simple YouTube Desktop Electron App",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron ."
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mikepruett/youtube-desktop"
+    "url": "https://github.com/mikepruett3/youtube-desktop"
   },
   "keywords": [
     "Youtube",
@@ -20,6 +21,14 @@
   "author": "Mike Pruett",
   "license": "MIT",
   "devDependencies": {
+    "@electron-forge/cli": "^6.0.5",
+    "@electron-forge/maker-deb": "^6.0.5",
+    "@electron-forge/maker-rpm": "^6.0.5",
+    "@electron-forge/maker-squirrel": "^6.0.5",
+    "@electron-forge/maker-zip": "^6.0.5",
     "electron": "^23.1.1"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0"
   }
 }
