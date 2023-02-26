@@ -2,6 +2,10 @@
 
 const { app, BrowserWindow } = require('electron');
 
+// Disable Hardware Acceleration
+// https://www.electronjs.org/docs/latest/tutorial/offscreen-rendering
+app.disableHardwareAcceleration()
+
 createWindow = () => {
     const win = new BrowserWindow({
         width: 1280,
@@ -17,10 +21,12 @@ createWindow = () => {
         }
     });
 
+    // Create a Cookie, so that Theater Mode is allways enabled.
     let code = `
     document.cookie = 'wide=1; expires='+new Date('3099').toUTCString()+'; path=/';
     `;
     win.webContents.executeJavaScript(code);
+
     win.loadURL(`https://www.youtube.com/feed/subscriptions`);
 };
 
