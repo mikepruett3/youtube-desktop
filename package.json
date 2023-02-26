@@ -1,0 +1,25 @@
+{
+  "name": "youtube-desktop",
+  "version": "1.0.0",
+  "description": "Simple YouTube Desktop Electron App",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mikepruett/youtube-desktop"
+  },
+  "keywords": [
+    "Youtube",
+    "Desktop",
+    "Electron",
+    "app"
+  ],
+  "author": "Mike Pruett",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^23.1.1"
+  }
+}
