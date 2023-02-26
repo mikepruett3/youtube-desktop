@@ -2,7 +2,7 @@
   "name": "youtube-desktop",
   "version": "1.0.0",
   "productName": "YouTube Desktop",
-  "description": "A simple YouTube Desktop application, built using Electron,js",
+  "description": "A simple YouTube Desktop application, built using Electron.js",
   "main": "main.js",
   "scripts": {
     "start": "electron-forge start",
