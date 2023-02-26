@@ -6,7 +6,8 @@ createWindow = () => {
     const win = new BrowserWindow({
         width: 1280,
         height: 720,
-        icon: __dirname + '/yt.ico',
+        title: 'YouTube Desktop',
+        icon: __dirname + '/images/YouTube.ico',
         autoHideMenuBar: true,
         webPreferences: {
             contextIsolation: true,

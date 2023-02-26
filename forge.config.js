@@ -1,5 +1,7 @@
 module.exports = {
-  packagerConfig: {},
+  packagerConfig: {
+    icon: __dirname + '/images/YouTube'
+  },
   rebuildConfig: {},
   makers: [
     {
