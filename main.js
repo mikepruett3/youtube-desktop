@@ -1,5 +1,8 @@
 // main.js
 
+// https://www.electronforge.io/config/makers/squirrel.windows
+if (require('electron-squirrel-startup')) return;
+
 const { app, shell, session, BrowserWindow } = require('electron');
 
 // Disable Hardware Acceleration
@@ -14,6 +17,7 @@ createWindow = () => {
         icon: __dirname + '/images/YouTube.ico',
         autoHideMenuBar: true,
         webPreferences: {
+            webSecurity: true,
             contextIsolation: true,
             webviewTag: true,
             nodeIntegration: true,

@@ -5,6 +5,7 @@
   "description": "A simple YouTube Desktop application, built using Electron.js",
   "main": "main.js",
   "scripts": {
+    "test": "electron .",
     "start": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make"
