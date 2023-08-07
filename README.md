@@ -10,7 +10,7 @@ YouTube Desktop is a simple Desktop application for watching YouTube, built usin
 
 ## Installation
 
-Dowload the lates [release](https://github.com/mikepruett3/youtube-desktop/releases) for Windows, Linux and MacOS.
+Dowload the latest [release](https://github.com/mikepruett3/youtube-desktop/releases) for Windows, Linux and MacOS.
 
 For Windows... a standard Exectuable is provided, as well as a NuGet package. RPM and DEB packages are availbe for Linux Distrubtions (not tested!).
 
