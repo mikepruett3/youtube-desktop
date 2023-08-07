@@ -4,7 +4,7 @@
 
 YouTube Desktop is a simple Desktop application for watching YouTube, built using [ElectronJS](https://www.electronjs.org).
 
-## Features (Tray)
+## Features
 
 - Control for Hardware Acceleration
 
