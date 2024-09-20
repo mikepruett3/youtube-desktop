@@ -50,7 +50,14 @@ createWindow = () => {
     });
 
     let tray = null
-    const icon = nativeImage.createFromPath(__dirname + '/images/YouTube.png')
+    var opsys = process.platform;
+    if (opsys == "darwin") {
+        const icon = nativeImage.createFromPath(__dirname + '/images/YouTube.icns');
+    } else if (opsys == "win32") {
+        const icon = nativeImage.createFromPath(__dirname + '/images/YouTube.ico');
+    } else if (opsys == "linux") {
+        const icon = nativeImage.createFromPath(__dirname + '/images/YouTube.png');
+    }
     tray = new Tray(icon)
 
     const contextMenu = Menu.buildFromTemplate([

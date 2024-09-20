@@ -16,6 +16,9 @@ module.exports = {
     {
       name: '@electron-forge/maker-zip',
       platforms: ['darwin'],
+      config: {
+        icon: './images/YouTube.icns'
+      },
     },
     {
       name: '@electron-forge/maker-deb',
