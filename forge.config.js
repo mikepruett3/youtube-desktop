@@ -18,13 +18,6 @@ module.exports = {
       platforms: ['darwin-x64'],
     },
     {
-      name: '@electron-forge/maker-dmg',
-      config: {
-        background: './images/YouTube.png',
-        format: 'ULFO'
-      }
-    },
-    {
       name: '@electron-forge/maker-deb',
       config: {},
     },
