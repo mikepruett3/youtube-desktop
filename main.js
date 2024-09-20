@@ -17,7 +17,7 @@ createWindow = () => {
         width: 1280,
         height: 720,
         title: 'YouTube Desktop',
-        icon: __dirname + '/images/YouTube.ico',
+        icon: __dirname + '/images/YouTube.png',
         autoHideMenuBar: true,
         webPreferences: {
             webSecurity: true,
@@ -50,7 +50,7 @@ createWindow = () => {
     });
 
     let tray = null
-    const icon = nativeImage.createFromPath(__dirname + '/images/YouTube.ico')
+    const icon = nativeImage.createFromPath(__dirname + '/images/YouTube.png')
     tray = new Tray(icon)
 
     const contextMenu = Menu.buildFromTemplate([
