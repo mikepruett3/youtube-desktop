@@ -49,17 +49,6 @@ createWindow = () => {
         return { action: 'deny' };
     });
 
-    let tray = null
-    var opsys = process.platform;
-    if (opsys == "darwin") {
-        const icon = nativeImage.createFromPath(__dirname + '/images/YouTube.icns');
-    } else if (opsys == "win32") {
-        const icon = nativeImage.createFromPath(__dirname + '/images/YouTube.ico');
-    } else if (opsys == "linux") {
-        const icon = nativeImage.createFromPath(__dirname + '/images/YouTube.png');
-    }
-    tray = new Tray(icon)
-
     const contextMenu = Menu.buildFromTemplate([
         {
             label: 'Hardware Acceleration',
@@ -101,6 +90,18 @@ createWindow = () => {
             role: 'quit'
         }
     ])
+
+    let tray = null
+    if (process.platform == 'darwin') {
+        const icon = nativeImage.createFromPath(__dirname + '/images/YouTube.icns')
+        tray = new Tray(icon)
+    } else if (process.platform == 'win32') {
+        const icon = nativeImage.createFromPath(__dirname + '/images/YouTube.ico')
+        tray = new Tray(icon)
+    } else if (process.platform == 'linux') {
+        const icon = nativeImage.createFromPath(__dirname + '/images/YouTube.png')
+        tray = new Tray(icon)
+    }
 
     tray.setToolTip('YouTube Desktop')
     tray.setTitle('YouTube Desktop')

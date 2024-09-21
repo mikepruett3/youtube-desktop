@@ -22,11 +22,15 @@ module.exports = {
     },
     {
       name: '@electron-forge/maker-deb',
-      config: {},
+      config: {
+        icon: './images/YouTube.png'
+      },
     },
     {
       name: '@electron-forge/maker-rpm',
-      config: {},
+      config: {
+        icon: './images/YouTube.png'
+      },
     },
   ],
   publishers: [
