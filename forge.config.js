@@ -32,6 +32,10 @@ module.exports = {
         icon: './images/YouTube.png'
       },
     },
+    {
+      name: 'electron-forge-maker-appimage',
+      platforms: ['linux'],
+    },
   ],
   publishers: [
     {
