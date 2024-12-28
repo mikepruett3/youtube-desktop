@@ -10,7 +10,7 @@ module.exports = {
       name: '@electron-forge/maker-squirrel',
       config: {
         iconUrl: 'https://raw.githubusercontent.com/mikepruett3/youtube-desktop/main/images/YouTube.ico',
-        setupIcon: _dirname + './images/YouTube.ico'
+        setupIcon: __dirname + './images/YouTube.ico'
       },
     },
     {
