@@ -6,6 +6,9 @@ if (require('electron-squirrel-startup')) return;
 const { app, shell, session, BrowserWindow, Menu, Tray, nativeImage, dialog } = require('electron')
 const { getHA, setHA } = require('./settings.js');
 
+const { ElectronBlocker } = require('@ghostery/adblocker-electron');
+const fetch = require('cross-fetch'); // required 'fetch'
+
 // Disable Hardware Acceleration
 // https://www.electronjs.org/docs/latest/tutorial/offscreen-rendering
 if (!getHA()) {
@@ -20,15 +23,19 @@ createWindow = () => {
         icon: __dirname + '/images/YouTube.png',
         autoHideMenuBar: true,
         webPreferences: {
-            webSecurity: true,
+            nodeIntegration: true,
+            webSecurity: false,
             contextIsolation: true,
             webviewTag: true,
-            nodeIntegration: true,
             nativeWindowOpen: true
         }
     });
 
     win.loadURL(`https://www.youtube.com/feed/subscriptions`);
+
+    ElectronBlocker.fromPrebuiltAdsAndTracking(fetch).then((blocker) => {
+        blocker.enableBlockingInSession(session.defaultSession);
+    });
 
     // Create a Cookie, so that Theater Mode is allways enabled.
     // https://www.electronjs.org/docs/latest/api/cookies
